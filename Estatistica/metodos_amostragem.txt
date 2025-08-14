@@ -1,0 +1,52 @@
+
+#=========================================================
+#  Amostragem simples ao acaso
+#=========================================================
+
+# Exemplo nota de aula - 2.5.1
+
+N=100  #tamanho da POPULA  O
+n=10  #tamanho da amostra
+sample(N,n) ;  #sorteando "n" elementos entre  1 e "N")
+
+#=========================================================
+#  Amostragem Estratificada
+#=========================================================
+
+# Exemplo nota de aula- sec 2.5.2
+
+TE=c(873,386,246,186,112)#tamanho dos estratos Ni
+
+N=1803  #tamanho da POPULA  O
+n=100  #tamanho da amostra
+
+ni=n/N*TE;ni
+
+ni2=round(ni,0);ni2# arredonda os valores de ni com "0" casas decimais
+
+sample(TE[1],ni2[1]) ;  #sorteando "ni" elementos no estrato 1)
+sample(TE[2],ni2[2]) ;  #sorteando "ni" elementos no estrato 2)
+
+sample(TE[3],ni2[3]) ;  #sorteando "ni" elementos no estrato 3)
+
+sample(TE[4],ni2[4]) ;  #sorteando "ni" elementos no estrato 4)
+
+sample(TE[5],ni2[5]) ;  #sorteando "ni" elementos no estrato 5)
+
+
+#=========================================================
+#  Amostragem sistem tica
+#=========================================================
+# Exemplo nota de aula - sec-2.5.3
+
+N=6000
+n=30
+
+R=round(N/n,0) # passos de amostragem (raz o) 
+ R
+sort_elem1=sample(R,1) ;  #sorteando o 1o elemento entre  1 e R)
+sort_elem1
+posicao=seq(sort_elem1,N,R);    #posi  o de todos elementos da amostra
+posicao                       #sequencia do 1o elemento ate N com saltos R 
+
+##################################################################################

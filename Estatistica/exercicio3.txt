@@ -1,0 +1,28 @@
+# Atividade nota de aula 3
+
+N=1650	# População
+n=50	# Amostra
+
+TE=c(30,120,230,380,890)	# Quantidade por classe
+
+ni=n/N*TE;ni	# Formula para calcular a quantidade de amostra por classe
+
+ni2=round(ni,0);ni2 # Arredondamento
+
+sample(TE[1],ni2[1]) ;
+sample(TE[2],ni2[2]) ;
+sample(TE[3],ni2[3]) ;
+sample(TE[4],ni2[4]) ;
+sample(TE[5],ni2[5]) ;
+
+
+------------------------------------------------------------------------------
+
+Passo a passo para fazer a amostragem:
+    - Primeiro definir o tamanho da população e da amostra.
+    - Checar como os dados estão organizados (simples ao acaso, estratificado ou sistematico)
+    - Verifiquei que é estratificado, assim vou definir um vetor da quantidade de elementos de cada classe
+    - Definir a quantidade de elementos por classe para a amostra seguindo a fórmula: ni=n/N*TE 
+    - Fazer o arredondamento do "ni" 
+    - Aplicar a aleatoriedade de escolha dos elementos
+
