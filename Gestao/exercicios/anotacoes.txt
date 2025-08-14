@@ -1,0 +1,10 @@
+Ator		Objetivo
+----    	--------
+Vendedores
+Clientes
+Consultoria
+Gere. Estoque
+
+
+
+
