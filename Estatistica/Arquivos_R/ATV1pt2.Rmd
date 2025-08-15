@@ -1,0 +1,137 @@
+<!-- R Commander Markdown Template -->
+
+Replace with Main Title
+=======================
+
+### renan
+
+### `r as.character(Sys.Date())`
+
+```{r echo=FALSE}
+# include this code chunk as-is to set options
+knitr::opts_chunk$set(comment=NA, prompt=TRUE, out.width=750, fig.height=8, fig.width=8)
+library(Rcmdr)
+library(car)
+library(RcmdrMisc)
+```
+
+```{r}
+load("C:/Users/renan/AppData/Local/Temp/Rtmp8GyRT2/xarope")
+```
+
+
+```{r}
+library(abind, pos=16)
+```
+
+
+```{r}
+library(e1071, pos=17)
+```
+
+
+
+### Numerical Summaries: xarope
+```{r}
+numSummary(xarope[,"volume", drop=FALSE], statistics=c("mean", "sd", "IQR", "quantiles"), quantiles=c(0,.25,.5,.75,
+  1))
+```
+
+
+```{r}
+mean(xarope)
+```
+
+
+
+### Numerical Summaries: xarope
+```{r}
+numSummary(xarope[,"volume", drop=FALSE], statistics=c("mean", "quantiles"), quantiles=c(0,.25,.5,.75,1))
+```
+
+```{r}
+mean(xarope)
+```
+
+
+```{r}
+xarope <- within(xarope, {
+  volume <- as.factor(volume)
+})
+```
+
+
+```{r}
+xarope
+```
+
+
+```{r}
+mean(xarope$volume)
+```
+
+
+```{r}
+mean(xarope$volume)
+```
+
+```{r}
+xarope$volume <- as.numeric(as.character(xarope$volume))
+```
+
+
+```{r}
+mean(xarope$volume)
+```
+
+
+```{r}
+median(xarope$volume)
+```
+
+
+```{r}
+sum(xarope$volume)
+```
+
+
+```{r}
+mean(xarope$volume)
+```
+
+
+```{r}
+median(xarope$volume)
+```
+
+
+```{r}
+sd(xarope$volume)
+```
+
+
+```{r}
+xarope
+```
+
+
+```{r}
+sum(xarope$volume)
+```
+
+
+```{r}
+mean(xarope$volume)
+```
+
+
+```{r}
+median(xarope$volume)
+```
+
+
+```{r}
+sd(xarope$volume)
+```
+
+
