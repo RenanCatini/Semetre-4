@@ -1,0 +1,65 @@
+-- ########## Comandos de Definição de Dados (DDL) ##########
+
+[cite_start]-- Cria um novo banco de dados chamado hostelapp_db [cite: 135, 138, 201]
+create database hostelapp_db;
+
+[cite_start]-- Cria uma nova tabela chamada GUEST com suas respectivas colunas [cite: 219, 220, 221, 222, 223, 224, 225, 226]
+CREATE TABLE GUEST(
+    GUEST_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    FIRST_NAME VARCHAR(64),
+    LAST_NAME VARCHAR(64),
+    EMAIL_ADDRESS VARCHAR(64),
+    ADDRESS VARCHAR(64),
+    COUNTRY VARCHAR(32),
+    STATE VARCHAR(12),
+    PHONE_NUMBER VARCHAR(24)
+);
+
+[cite_start]-- Altera a senha do usuário 'root' (alternativa) [cite: 86]
+ALTER USER 'root'@'localhost' IDENTIFIED BY '12345';
+
+
+-- ########## Comandos de Manipulação de Dados (DML) ##########
+
+[cite_start]-- Insere um novo registro (linha) na tabela GUEST [cite: 253]
+INSERT INTO GUEST (LAST_NAME, FIRST_NAME, EMAIL_ADDRESS, COUNTRY, ADRESS, STATE, PHONE_NUMBER)
+VALUES('Gatsby', 'Jay', 'jay@gmail.com', 'United States', '1187 Fleming Street', 'AL', '+1-205-555-0178');
+
+
+-- ########## Comandos de Consulta de Dados (DQL) ##########
+
+[cite_start]-- Seleciona e exibe todos os dados da tabela GUEST [cite: 518, 539]
+SELECT * FROM GUEST;
+
+[cite_start]-- Seleciona e exibe apenas as colunas de nome, sobrenome e e-mail da tabela GUEST [cite: 531, 539]
+SELECT FIRST_NAME, LAST_NAME, EMAIL_ADDRESS FROM GUEST;
+
+
+-- ########## Comandos de Controle de Dados (DCL) ##########
+
+[cite_start]-- Cria um novo usuário chamado 'florentino' com a senha 'secret' [cite: 578, 664]
+CREATE USER 'florentino'@'%' IDENTIFIED BY 'secret';
+
+[cite_start]-- Concede todos os privilégios no banco de dados 'hostelapp_db' ao usuário 'florentino' de qualquer host [cite: 584, 664]
+GRANT ALL PRIVILEGES ON hostelapp_db.* TO 'florentino'@'%';
+
+[cite_start]-- Concede todos os privilégios no banco de dados 'hostelapp_db' ao usuário 'florentino' apenas do localhost [cite: 61, 664]
+GRANT ALL PRIVILEGES ON hostelapp_db.* TO 'florentino'@'localhost';
+
+
+-- ########## Comandos do Cliente MySQL (MySQL Monitor) ##########
+
+[cite_start]-- Lista todos os bancos de dados existentes [cite: 109, 201]
+show databases;
+
+[cite_start]-- Seleciona o banco de dados 'hostelapp_db' para executar os próximos comandos [cite: 463, 539]
+use hostelapp_db;
+
+[cite_start]-- Lista todas as tabelas dentro do banco de dados atualmente selecionado [cite: 486, 539]
+show tables;
+
+[cite_start]-- Mostra a estrutura (colunas, tipos de dados, etc.) da tabela GUEST [cite: 507, 539]
+describe GUEST;
+
+[cite_start]-- Encerra a sessão e sai do monitor MySQL [cite: 195, 201]
+quit;
