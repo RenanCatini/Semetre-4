@@ -49,4 +49,4 @@ sort_elem1
 posicao=seq(sort_elem1,N,R);    #posi  o de todos elementos da amostra
 posicao                       #sequencia do 1o elemento ate N com saltos R 
 
-##################################################################################
+#################################################################################
