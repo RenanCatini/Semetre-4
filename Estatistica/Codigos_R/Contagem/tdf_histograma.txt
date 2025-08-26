@@ -1,0 +1,49 @@
+#--------------------------------------Tabela de Distribuição de frequência nas classes TDF-----------------------------------------#
+
+dados <- Dataset$vvpa;dados     # armazenando as observações no objeto dados
+
+n <- length(dados);n      						# número de observações  
+k <- sqrt(n) + 0.5;k <- round(k, 0)      				# número de classes (regra de Sturges aproximada) (raiz para >=100 e 5log(x) para >)
+C <- (max(dados) - min(dados)) / (k - 1);C <- round(C, 2)    		# amplitude de classe, com duas casas decimais
+limites <- round(min(dados) - C/2, 2) + C * (0:k)   			# limites de classe
+TDF <- hist(dados, breaks = limites, plot = FALSE, right = FALSE)
+
+tabela <- matrix(c(rep(6 * k)), k, 6)
+
+for (i in 1:k) {
+  tabela[i, 1] <- round(TDF$breaks[i], 2)                # LI
+  tabela[i, 2] <- round(TDF$breaks[i+1], 2)              # LS
+  tabela[i, 3] <- round(TDF$mids[i], 2)                  # Xi
+  tabela[i, 4] <- TDF$counts[i]                          # Fi
+  tabela[i, 5] <- round((TDF$counts[i]) / n, 4)          # Fr
+  tabela[i, 6] <- round((100 * TDF$counts[i]) / n, 2)    # Fp
+}
+
+colnames(tabela) <- c("LI", "LS", "Xi", "Fi", "Fr", "Fp")
+tabela
+
+
+#--------------------------------------------------------Construindo o Histograma---------------------------------------------------#
+
+dados <- Dataset$vvpa;dados   # armazenando as observações no objeto dados
+
+n <- length(dados);n      # número de observações
+k <- sqrt(n) + 0.5;k <- round(k, 0)
+C <- (max(dados) - min(dados)) / (k - 1);C <- round(C, 2)
+limites <- round(min(dados) - C/2, 2) + C * (0:k)
+TDF <- hist(dados, breaks = limites, plot = FALSE, right = FALSE)
+
+hist(dados, xlab = "VVPAe (pontos)", ylab = "Frequência absoluta", label = FALSE, col = "gray", main = "",right = FALSE, 
+  xlim = c(min(TDF$mids) - C, max(TDF$mids) + C), ylim = c(0, (max(TDF$counts) + 1)),breaks = limites, axes = FALSE)
+
+axis(1, at = limites, pos = c(0, 0));axis(2, at = seq(0, (max(TDF$counts) + 1)))
+
+
+#-----------------------------------------Construindo o Polígono de Frequências no Histograma---------------------------------------#
+
+Xip <- c(TDF$mids[1] - C, TDF$mids, TDF$mids[length(TDF$mids)] + C)
+frequencia <- c(0, TDF$counts, 0)
+
+lines(frequencia ~ Xip, type = "l", col = "blue", lwd = 2)
+
+
