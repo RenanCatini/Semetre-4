@@ -1,6 +1,6 @@
 #--------------------------------------Tabela de Distribuição de frequência nas classes TDF-----------------------------------------#
 
-dados <- Dataset$vvpa;dados     # armazenando as observações no objeto dados
+dados <- Dataset$V1;dados     # armazenando as observações no objeto dados
 
 n <- length(dados);n      						# número de observações  
 k <- sqrt(n) + 0.5;k <- round(k, 0)      				# número de classes (regra de Sturges aproximada) (raiz para >=100 e 5log(x) para >)
@@ -25,7 +25,7 @@ tabela
 
 #--------------------------------------------------------Construindo o Histograma---------------------------------------------------#
 
-dados <- Dataset$vvpa;dados   # armazenando as observações no objeto dados
+dados <- Dataset$V1;dados   # armazenando as observações no objeto dados
 
 n <- length(dados);n      # número de observações
 k <- sqrt(n) + 0.5;k <- round(k, 0)
@@ -46,4 +46,24 @@ frequencia <- c(0, TDF$counts, 0)
 
 lines(frequencia ~ Xip, type = "l", col = "blue", lwd = 2)
 
+
+
+#------------------- Intervalo Discreto ------------------------#
+dados <- Dataset$vvpa;dados
+
+tabela_inicial <- table(dados)
+
+Fi <- as.vector(tabela_inicial)
+n <- length(dados)
+
+Fr <- Fi / n                  # Frequência Relativa
+Fp <- Fr * 100                 # Frequência Percentual
+
+tabela_final <- data.frame(
+  "Fi" = Fi,
+  "Fr" = round(Fr, 4), 
+  "Fp (%)" = round(Fp, 2),  
+)
+
+tabela_final
 
