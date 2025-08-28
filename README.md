@@ -1,6 +1,6 @@
-# 📚 Projetos do 4º Semestre
+# 📚 Matérias do 4º Semestre
 
-Este repositório contém os projetos e trabalhos acadêmicos desenvolvidos durante o 4º semestre do curso de **Ciência da Computação**.
+Este repositório contém as aulas e trabalhos acadêmicos desenvolvidos durante o 4º semestre do curso de **Ciência da Computação**.
 
 ## Disciplinas
 
