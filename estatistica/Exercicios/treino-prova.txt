@@ -1,0 +1,9 @@
+Dados: 48 116 126 148 135 144 129 128 120 146 140 146
+
+a) A média do rendimento da proteína estudada foi de 135,5 mg/g de proteína do certo cultivar de aveia.
+   O valor que mais se repete da amostra estudada é de 147,5 mg/g de proteína.
+   A mediana da amostra é de 137,5 mg/g de proteínas, ou seja 50% do rendimento das amostras estudadas estão abaixo de 137,5 mg/g e os outros 50% estão acima. 
+   
+ b) Ao analisarmos o BoxPlot do rendimento em mg/g da amostra, reparamos que não há valores extremos, ou outliers, por isso a melhor forma de se fazer a medida de posição é a média. Além de que ela é uma tratavel matemáticamente, trazendo diversas vantagens.
+ 
+ c) A variabilidade da amostra de rendimento de proteína analisada é de 8,4%, assim, seguindo a padronização proposta em aula, como é menor que 10%, ela é considerada baixa.	
