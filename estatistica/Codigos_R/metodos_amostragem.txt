@@ -43,7 +43,7 @@ N=6000
 n=30
 
 R=round(N/n,0) # passos de amostragem (raz o) 
- R
+R
 sort_elem1=sample(R,1) ;  #sorteando o 1o elemento entre  1 e R)
 sort_elem1
 posicao=seq(sort_elem1,N,R);    #posi  o de todos elementos da amostra
